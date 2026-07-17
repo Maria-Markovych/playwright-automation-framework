@@ -1,0 +1,14 @@
+Automation Test Attachment
+
+This file is uploaded as part of an automated UI test.
+
+Purpose:
+- Verify file upload functionality.
+- Verify successful form submission.
+- Ensure the uploaded file is processed correctly.
+
+Test Environment: QA
+Author: Automation Test
+Date: 2026-07-09
+
+End of test file.
