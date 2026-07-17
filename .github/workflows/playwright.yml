@@ -12,6 +12,11 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
     env:
       BASE_URL: https://automationexercise.com/
       API_URL: https://automationexercise.com/api
@@ -53,3 +58,14 @@ jobs:
           name: allure-report
           path: allure-report
           retention-days: 14
+
+      - name: Upload Allure report to GitHub Pages
+        if: always()
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: allure-report
+
+      - name: Deploy Allure report to GitHub Pages
+        if: always()
+        id: deployment
+        uses: actions/deploy-pages@v4    
