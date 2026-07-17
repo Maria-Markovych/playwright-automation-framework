@@ -1,5 +1,7 @@
 # Playwright Automation Framework
 
+[![Playwright Tests](https://github.com/Maria-Markovych/playwright-automation-framework/actions/workflows/playwright.yml/badge.svg)](https://github.com/Maria-Markovych/playwright-automation-framework/actions/workflows/playwright.yml)
+
 A scalable end-to-end test automation framework built with **Playwright and TypeScript**.
 
 The project demonstrates UI and API test automation using a layered architecture with Page Object Model, reusable UI components, custom fixtures, API service classes, test data management, network mocking, Allure reporting, and GitHub Actions CI.
