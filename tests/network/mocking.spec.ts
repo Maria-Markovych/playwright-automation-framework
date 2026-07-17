@@ -1,5 +1,6 @@
 import { test, expect } from "../../fixtures";
 import * as allure from "allure-js-commons";
+import { environment } from "../../utils/env";
 
 test.describe("Network Mocking", () => {
     test('should mock products page with route.fulfill', async ({ loggedHomePage }) => {
@@ -29,7 +30,13 @@ test.describe("Network Mocking", () => {
             });
         });
 
-        await loggedHomePage.goToProductsPage();
+        await loggedHomePage.page.goto(
+            `${environment.baseUrl}products`,
+            {
+                waitUntil: 'domcontentloaded'
+            }
+        );
+
 
         await expect(loggedHomePage.page.locator('h2.title')).toHaveText('Mock Products');
 
@@ -73,7 +80,14 @@ test.describe("Network Mocking", () => {
             }
         });
 
-        await loggedHomePage.goToProductsPage();
+        await expect(
+            loggedHomePage.page.goto(
+                `${environment.baseUrl}products`,
+                {
+                    waitUntil: 'domcontentloaded'
+                }
+            )
+        ).rejects.toThrow();
 
         await expect.poll(() => productsRequestFailed).toBe(true);
     });
