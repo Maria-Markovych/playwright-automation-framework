@@ -68,4 +68,10 @@ export class ProductsPage extends BasePage {
         }).not.toBe(beforeState);
     }
 
+    async waitForPage(): Promise<void> {
+        await this.productsContainer.getSearchInput().waitFor({
+            state: 'visible'
+        });
+    }
+
 }

@@ -38,4 +38,8 @@ export class ProductsContainer {
         await this.searchInput.fill(productName);
         await this.searchBtn.click();
     }
+
+    getSearchInput(): Locator {
+        return this.searchInput;
+    }
 }

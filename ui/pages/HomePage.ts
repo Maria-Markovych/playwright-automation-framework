@@ -15,7 +15,7 @@ export class HomePage extends BasePage {
 
     async open(): Promise<void> {
         await this.page.goto(environment.baseUrl, {
-            waitUntil:"domcontentloaded"
+            waitUntil: "domcontentloaded"
         });
     }
 
@@ -26,7 +26,9 @@ export class HomePage extends BasePage {
 
     async goToProductsPage(): Promise<ProductsPage> {
         await this.header.clickProductsLink();
-        return new ProductsPage(this.page);
+        const productsPage = new ProductsPage(this.page);
+        await productsPage.waitForPage();
+        return productsPage;
     }
 
     async goToCartPage(): Promise<CartPage> {
