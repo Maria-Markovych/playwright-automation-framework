@@ -3,7 +3,7 @@ import { Page, expect } from "@playwright/test";
 import { ProductsContainer } from "../containers/ProductsContainer";
 import { ProductCard } from "../components/ProductCard";
 import { ProductDetailsPage } from "./ProductDetailsPage";
-import { SidebarComponent } from "../components/SideBarComponent";
+import { SidebarComponent } from "../components/SidebarComponent";
 import { AddedModalComponent } from "../components/AddedModalComponent";
 
 

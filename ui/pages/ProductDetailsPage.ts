@@ -1,5 +1,5 @@
 import { Locator, Page } from "@playwright/test";
-import { SidebarComponent } from "../components/SideBarComponent";
+import { SidebarComponent } from "../components/SidebarComponent";
 import { AddedModalComponent } from "../components/AddedModalComponent";
 
 
