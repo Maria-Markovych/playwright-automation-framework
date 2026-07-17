@@ -1,6 +1,7 @@
 import { test, expect } from "../../fixtures";
 import * as allure from "allure-js-commons";
 import { environment } from "../../utils/env";
+import { ProductsPage } from "../../ui/pages/ProductsPage";
 
 test.describe("Network Mocking", () => {
     test('should mock products page with route.fulfill', async ({ loggedHomePage }) => {
@@ -57,7 +58,13 @@ test.describe("Network Mocking", () => {
             });
         });
 
-        const productsPage = await loggedHomePage.goToProductsPage();
+        await loggedHomePage.page.goto(
+            `${environment.baseUrl}products`,
+            {
+                waitUntil: 'domcontentloaded'
+            }
+        );
+        const productsPage = new ProductsPage(loggedHomePage.page);
         const cards = await productsPage.getProductCards();
 
         expect(cards.length).toBe(1);
