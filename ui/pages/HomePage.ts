@@ -26,9 +26,7 @@ export class HomePage extends BasePage {
 
     async goToProductsPage(): Promise<ProductsPage> {
         await this.header.clickProductsLink();
-        const productsPage = new ProductsPage(this.page);
-        await productsPage.waitForPage();
-        return productsPage;
+        return new ProductsPage(this.page);
     }
 
     async goToCartPage(): Promise<CartPage> {

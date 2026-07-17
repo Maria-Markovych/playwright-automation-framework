@@ -96,6 +96,7 @@ test.describe("Products", () => {
                 `Search for "${search.searchText}"`,
                 async () => {
                     const page = await loggedHomePage.goToProductsPage();
+                    page.waitForPage();
                     await page.searchProduct(search.searchText);
                     return page;
                 }
