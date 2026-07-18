@@ -182,14 +182,29 @@ jobs:
           name: allure-results-network
           path: allure-results-network
 
-      - name: Generate Allure report
+      - name: Generate Allure reports
         run: |
-          npx allure generate \
-            allure-results-ui \
-            allure-results-api \
-            allure-results-network \
-            -o allure-report \
-            --clean
+         npx allure generate \
+         allure-results-ui \
+         -o allure-report/ui \
+         --clean
+
+         npx allure generate \
+         allure-results-api \
+         -o allure-report/api \
+         --clean
+
+         npx allure generate \
+         allure-results-network \
+         -o allure-report/network \
+         --clean
+
+         npx allure generate \
+         allure-results-ui \
+         allure-results-api \
+         allure-results-network \
+         -o allure-report \
+         --clean
 
       - name: Upload Allure report
         if: always()
