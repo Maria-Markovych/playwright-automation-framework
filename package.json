@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "uitests": "playwright test tests/ui",
-    "apitests": "playwright test tests/api",
-    "networktests": "playwright test tests/network",
+    "uitests": "playwright test tests/ui --project=chromium",
+    "apitests": "playwright test tests/api --project=api",
+    "networktests": "playwright test tests/network --project-network",
     "all": "playwright test",
     "report": "playwright show-report",
     "allure:generate": "allure generate allure-results --clean -o allure-report",

@@ -49,6 +49,16 @@ export default defineConfig({
       dependencies: ['setup'],
       testIgnore: "**/auth/auth.setup.spec.ts",
 
+    },
+
+    {
+      name: 'api',
+      testMatch: "**/tests/api/*.spec.ts"
+    },
+
+    { 
+      name: 'network',
+      testMatch: "**/tests/network/mocking.spec.ts"
     }
   ],
 
