@@ -203,8 +203,30 @@ jobs:
          allure-results-ui \
          allure-results-api \
          allure-results-network \
-         -o allure-report \
+         -o allure-report/all \
          --clean
+
+      - name: Create Allure reports index page
+        run: |
+          cat > allure-report/index.html <<'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <title>Playwright Test Reports</title>
+          </head>
+          <body>
+              <h1>Playwright Test Reports</h1>
+
+              <ul>
+                  <li><a href="./all/index.html">All Tests Report</a></li>
+                  <li><a href="./ui/index.html">UI Tests Report</a></li>
+                  <li><a href="./api/index.html">API Tests Report</a></li>
+                  <li><a href="./network/index.html">Network Tests Report</a></li>
+              </ul>
+          </body>
+          </html>
+          EOF   
 
       - name: Upload Allure report
         if: always()
