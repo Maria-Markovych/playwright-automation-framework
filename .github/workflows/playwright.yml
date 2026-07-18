@@ -46,9 +46,9 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-        name: allure-results-ui
-        path: allure-results
-        retention-days: 14  
+          name: allure-results-ui
+          path: allure-results
+          retention-days: 14  
 
 
   api-tests:
@@ -90,9 +90,9 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-        name: allure-results-api
-        path: allure-results
-        retention-days: 14  
+          name: allure-results-api
+          path: allure-results
+          retention-days: 14  
 
 
   network-tests:
@@ -134,6 +134,6 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-        name: allure-results-network
-        path: allure-results
-        retention-days: 14  
+          name: allure-results-network
+          path: allure-results
+          retention-days: 14  
